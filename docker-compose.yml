@@ -51,8 +51,8 @@ services:
     ports:
       - "9090:8080"
     environment:
-      - UPSTREAM_URL=${UPSTREAM_URL:-http://nginx:80}
-      - UPSTREAM_HOST=${UPSTREAM_HOST:-3cket.local}
+      - UPSTREAM_URL=${UPSTREAM_URL:}
+      - UPSTREAM_HOST=${UPSTREAM_HOST:}
       - REDIS_ADDR=redis:6379
       - MONGO_URI=mongodb://mongo:27017/sentinel
       - LOG_TTL_DAYS=${LOG_TTL_DAYS:-4}
@@ -69,7 +69,6 @@ services:
       retries: 3
     networks:
       - sentinel-network
-      - 3cket-intra
 
   sentinel-api:
     build:
@@ -148,6 +147,3 @@ volumes:
 networks:
   sentinel-network:
     driver: bridge
-  3cket-intra:
-    external: true
-    name: 3cket-intra
