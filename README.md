@@ -48,7 +48,7 @@ curl -H "Host: app.3cket.local" http://localhost:9090/promoters
 
 ### Environment Variables
 
-- `UPSTREAM_URL` - Target upstream URL (default: http://nginx:80 for local 3cket, or https://3cket.com for production)
+- `UPSTREAM_URL` - Target upstream URL (default: http://nginx:....)
 - `LOG_TTL_DAYS` - MongoDB log retention in days (default: 4)
 - `LOG_BODY_MAX_BYTES` - Maximum body size to log (default: 1048576 = 1MB)
 - `SENTINEL_ADMIN_TOKEN` - Admin token for API access (default: changeme)
