@@ -1,0 +1,12 @@
+<template>
+  <div :class="cn('flex flex-col space-y-1.5 text-center sm:text-left', attrs.class as string)">
+    <slot />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useAttrs } from 'vue'
+import { cn } from '@/lib/utils'
+
+const attrs = useAttrs()
+</script>
